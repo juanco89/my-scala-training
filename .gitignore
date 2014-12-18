@@ -25,3 +25,11 @@ local.properties
 .metadata
 .classpath
 .project
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
