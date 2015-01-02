@@ -8,7 +8,7 @@ import scala.concurrent.ExecutionContext
 import scala.util.Success
 import scala.util.Failure
 import collection.JavaConversions._
-import juanco.services.fake.TwitterService
+import juanco.services.mock.TwitterService
 
 
 object FollowersSearch extends App {

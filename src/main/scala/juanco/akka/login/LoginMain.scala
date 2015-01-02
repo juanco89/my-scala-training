@@ -1,19 +1,32 @@
-
 package juanco.akka.login
 
-import akka.actor.ActorSystem
 import scala.concurrent.ExecutionContext
-import akka.actor.Props
 import scala.annotation.tailrec
 import scala.io.Source.stdin
-import shapeless.ToInt
 
+import akka.actor.ActorSystem
+import akka.actor.Props
+import akka.actor.ActorRef
+
+import juanco.services.mock.Usuario
+
+/**
+ * 
+ * Clase principal del ejercicio de Login y manejo de sesiones en memoria
+ * realizadoen la capacitación de Akka y programacion reactiva.
+ * 
+ * Objetivo: Crear un sistema de autenticación y manejo de sesiones usando actores,
+ * manteniendo los tokens de sesión en memoria.
+ * 
+ * Juan C. Orozco
+ */
 object LoginMain extends App {
+  
   var system = ActorSystem("LoginActorSystem")
   implicit val _ : ExecutionContext = system.dispatcher
 
-  // TODO: Crear actores
-
+  val loginService: ActorRef = system.actorOf(Props[LoginServiceActor], "LoginService")
+  
   var seguir: Boolean = true
 
   consola()
@@ -44,16 +57,16 @@ object LoginMain extends App {
       val username = readLine()
       Console.print("Ingrese su contraseña: ")
       val password = readLine()
-
+      loginService ! LoginRequest(username, password)
     }else if(opcion == 2) {
-
+      loginService ! ActiveSessionsList()
     }else if(opcion == 3) {
-
+      // En construcción
     }else if(opcion == 4) {
       seguir = false
     }
   }
 
-  // Thread.sleep(20000)
+  // Thread.sleep(5000)
   system.shutdown
 }
