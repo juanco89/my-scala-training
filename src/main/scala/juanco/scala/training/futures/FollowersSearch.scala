@@ -1,4 +1,4 @@
-package juanco.scala.training.future
+package juanco.scala.training.futures
 
 import java.util.concurrent.Executors
 import scala.concurrent.Future

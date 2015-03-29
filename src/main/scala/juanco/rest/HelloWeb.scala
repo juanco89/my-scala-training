@@ -1,7 +1,9 @@
-package juanco.akka.helloweb
+package juanco.rest
 
 import spray.routing.SimpleRoutingApp
 import akka.actor.ActorSystem
+import spray.httpx.marshalling.ToResponseMarshallable.isMarshallable
+import spray.routing.Directive.pimpApply
 
 /*
  * Uso básico de spray-routing.

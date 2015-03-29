@@ -1,4 +1,4 @@
-package juanco.scala.notas
+package juanco.scala.basics
 
 /**
  * Queens - Búsqueda combinatoria
