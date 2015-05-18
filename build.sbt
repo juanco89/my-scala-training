@@ -13,5 +13,8 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.11" % "test",
   "io.spray" % "spray-can_2.11" % "1.3.2",
   "io.spray" % "spray-routing_2.11" % "1.3.2",
-  "io.spray" % "spray-json_2.11" % "1.3.1"
+  "io.spray" % "spray-json_2.11" % "1.3.1",
+  "org.postgresql" % "postgresql" % "9.3-1100-jdbc4",
+  "com.typesafe.slick" %% "slick" % "3.0.0",
+  "org.slf4j" % "slf4j-nop" % "1.6.4"
 )
