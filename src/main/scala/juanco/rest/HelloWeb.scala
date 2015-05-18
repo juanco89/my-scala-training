@@ -5,7 +5,7 @@ import akka.actor.ActorSystem
 import spray.httpx.marshalling.ToResponseMarshallable.isMarshallable
 import spray.routing.Directive.pimpApply
 import spray.json._
-import juanco.rest.PersonaJsonProtocol._
+import juanco.rest.MyJsonProtocol._
 
 /*
  * Uso básico de spray-routing.
@@ -19,7 +19,7 @@ object HelloWeb extends App with SimpleRoutingApp {
     path("saludo" / Segment) { (name) => 
       get {
         complete {
-          Persona(name).toJson.toString()
+          Persona(name, 0).toJson.toString()
         }
       }
     }
