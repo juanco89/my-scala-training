@@ -9,6 +9,8 @@ resolvers += "Typesafe Releases" at "http://repo.akka.io/snapshots/"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3-SNAPSHOT",
+  "com.typesafe.akka" %% "akka-testkit" % "2.3-SNAPSHOT",
+  "org.scalacheck" %% "scalacheck" % "1.12.1" % "test",
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
   "junit" % "junit" % "4.11" % "test",
   "io.spray" % "spray-can_2.11" % "1.3.2",
