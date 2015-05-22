@@ -1,24 +1,10 @@
-package juanco.scala
+package juanco.scala.reactivex
 
 import rx.lang.scala.subjects.PublishSubject
-import rx.lang.scala.Observable
 
-
-object ReaderObservable {
+object ReaderSubject {
 
   def main(args: Array[String]): Unit = {
-    
-    val url = "http://reactivex.io/rxscala/scaladoc/index.html"
-    
-    /* With Observable */
-      
-    val webObservable = Observable.from(webPageContent(url).toList)
-    
-    webObservable.subscribe { 
-      println(_) 
-    }   
-    
-    /* With subject */
     
     val subject = PublishSubject[String]()
     
@@ -44,9 +30,6 @@ object ReaderObservable {
     print("Presione una tecla para terminar...")
     readLine()
   }
-  
-  
-  def webPageContent(url: String): Iterator[String] = io.Source.fromURL(url).getLines()
   
   def fileContent(name: String): Iterator[String] = io.Source.fromFile(name).getLines()
   
