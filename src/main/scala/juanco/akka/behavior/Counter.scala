@@ -15,6 +15,8 @@ object Counter {
    */
   class CounterActor extends akka.actor.Actor {
     
+    def incrementar(n: Int): Int = n + 1
+    
     /**
      * Método que define el comportamiento del actor.
      * 
@@ -22,7 +24,7 @@ object Counter {
      * actualizando el estado en el parámetro de este método.
      */
     def contador(n: Int): Receive = {
-      case Increment => context.become(contador(n + 1))
+      case Increment => context.become(contador(incrementar(n)))
       case Reset => context.become(contador(0))
       case Get => sender ! n
     }
