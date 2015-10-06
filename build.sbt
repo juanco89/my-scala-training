@@ -10,6 +10,7 @@ resolvers += "Typesafe Releases" at "http://repo.akka.io/snapshots/"
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3-SNAPSHOT",
   "com.typesafe.akka" %% "akka-testkit" % "2.3-SNAPSHOT",
+  "com.typesafe.akka" %% "akka-cluster" % "2.3-SNAPSHOT",
   "org.scalacheck" %% "scalacheck" % "1.12.1" % "test",
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
   "junit" % "junit" % "4.11" % "test",
@@ -19,5 +20,7 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "9.3-1100-jdbc4",
   "com.typesafe.slick" %% "slick" % "3.0.0",
   "org.slf4j" % "slf4j-nop" % "1.6.4",
-  "io.reactivex" %% "rxscala" % "0.24.1"
+  "io.reactivex" %% "rxscala" % "0.24.1",
+  "org.mongodb" % "casbah_2.11" % "2.8.2",
+  "org.reactivemongo" % "reactivemongo_2.11" % "0.11.7"
 )
